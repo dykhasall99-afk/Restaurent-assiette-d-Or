@@ -7,6 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
 
@@ -30,10 +31,12 @@
         </div>
     </nav>
 
+                             <!-- Section Accueil -->
+
     <header  id="accueil" class="hero-section">
         <div class="container text-center text-white">
             <div class="d-flex align-items-center justify-content-center mb-0">
-                <img src="img/Vector.svg" alt="Icone chef L'assiette d'Or" class="hero-icon me-3">
+                <img src="img/Vector.svg" alt="Icone chef L'assiette d'Or" class="me-3 chef-icon">
             
             <h1 class="display-1 fw-bold main-title">L'assiette d'Or</h1>
             </div>
@@ -44,9 +47,12 @@
 
             <h2 class="h4 sub-title italic-links mb-5">Des plats authentiques préparés à Dakar</h2>
 
-            <button class="btn btn-yellow-custom">Commander</button>
+            <a href="#reservation" class="btn btn-yellow-custom">Réserver une table</a>
         </div>
-    </header> 
+    </header>
+    
+                                      <!-- Section Offres spéciales -->
+
  <section id="offres" class="offres-section"> 
     <div class="container text-center">
         <h2 class="fw-bold display-5 mb-2">Offres spéciales</h2>
@@ -54,7 +60,7 @@
         <p class="fst-italic text-secondary mb-5">Des recettes authentiques créées avec passion</p>
 
         <div class="row g-4 justify-content-center">
-            <div class="col-md-4 col-sm-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="offre-card shadow-sm p-4">
                     <div class="badge-price">6000F</div>
                     <img src="img/MEAT FULL.jpeg" alt="meat-full" class="rounded-circle food-img mb-3">
@@ -64,17 +70,17 @@
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="offre-card shadow-sm p-4">
                     <div class="badge-price">4500F</div>
                     <img src="img/SOUPE DE CREVETTE.jpeg" alt="Shrimpsoupe" class="rounded-circle food-img mb-3">
                     <h3 class="h5 fw-bold">Shrimpsoupe</h3>
-                    <p class="small fst-italic text-muted">Melange croquant de légumes avec du sauces crevettes et vinaigres citronné.</p>
+                    <p class="small fst-italic text-muted">Melange croquant de légumes avec du sauces crevettes et vinaigres.</p>
                     <button class="btn btn-commander-rouge mt-2">Commander</button>
                 </div>
             </div>
 
-            <div class="col-md-4 col-sm-6">
+            <div class="col-12 col-sm-6 col-md-4">
                 <div class="offre-card shadow-sm p-4">
                     <div class="badge-price">3500F</div>
                     <img src="img/RATATOUILLE.jpeg" alt="Ratatouille" class="rounded-circle food-img mb-3">
@@ -85,37 +91,206 @@
             </div>
         </div>
     </div>
- </section>
+ </section> 
 
-<section  id="reservation" class="reservation py-5">
+                                 <!-- Section Réservation -->
+
+ <section  id="reservation" class="reservation-section">
     <div class="container">
-        <div class="reservation-card mx-auto p-4 text-center shadow-sm">
-            <h2 class="fw-bold">Réserver dès maintenant</h2>
-            <p>Nous vous accueillons tous les jours dans un cadre chaleureux</p>
-            
-            <form class="mt-4 text-start">
+        <div class="reservation-card mx-auto shadow-sm">
+            <h4 class="fw-bold">Réserver dès maintenant</h4>
+            <hr class="separator">
+              <form id="reservationForm" class="mt-4 text-start">
                 <div class="mb-3">
                     <label class="fw-bold">Nom complet :</label>
-                    <input type="text" class="form-control custom-input">
+                    <input type="text" placeholder="Entrer votre nom complet" class="form-control custom-input" required>
                 </div>
                 <div class="mb-3">
                     <label class="fw-bold">Email :</label>
-                    <input type="email" class="form-control custom-input">
+                    <input type="email" placeholder="Entrer votre email" class="form-control custom-input" required>
                 </div>
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <label>📅 Date :</label>
-                        <input type="date" class="form-control custom-input">
+                <div class="mb-3">
+                    <label class="fw-bold">Numéro de téléphone :</label>
+                    <input type="tel" placeholder="Entrer votre numéro de téléphone" class="form-control custom-input" required>
+                </div>
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label>📅 Date</label>
+                        <input type="date" class="form-control custom-input" required>
                     </div>
+                    <div class="col-md-6">
+                        <label>⏰ Heure</label>
+                        <input type="time" class="form-control custom-input" required>
                     </div>
+                </div>
+                <div class="row g-3 mt-3">
+                    <div class="col-md-6">
+                        <label>🍽️ Type de repas :</label>
+                        <select class="form-select custom-input" required>
+                            <option value="">Sélectionner</option>
+                            <option value="dejeuner">Déjeuner</option>
+                            <option value="diner">Dîner</option>
+                            <option value="evenement">Événement spécial</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label>👥 Nombre de personnes</label>
+                        <input type="number" min="1" max="20" placeholder="Nombre de personnes" class="form-control custom-input" required>
+                    </div>
+                </div>
                 <div class="text-center mt-4">
-                    <button class="btn btn-reserver">Réserver maintenant</button>
+                    <button type="submit" class="btn btn-reserver-rouge mt-2 mb-3">Réserver maintenant</button>
                 </div>
             </form>
         </div>
     </div>
-</section>
+ </section>
+    
+                               <!-- Section Galerie -->
 
+ <section id="galerie" class="galerie-section">
+
+    <div class="container text-center">
+        <h2 class="fw-bold display-5 mb-2">Nos plus beaux plats</h2>
+        <hr class="separator">
+        <p class="slogan-text">Découvrez l'univers culinaire de L'Assiette d'Or</p>
+
+        <div class="row g-4 justify-content-center mt-4">
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="offre-card shadow-sm p-4">
+                    <div class="badge-price">6000F</div>
+                    <img src="img/PATTE.jpeg" alt="pattess" class="rounded-circle food-img mb-3">
+                    <h3 class="h5 fw-bold">Pastelles</h3>
+                    <p class="small fst-italic text-muted">Pates fraiches enrobés d'une créme aux champignons avec du sauce.</p>
+                    <button class="btn btn-commander-rouge mt-2">Commander</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="offre-card shadow-sm p-4">
+                    <div class="badge-price">4500F</div>
+                   <img src="img/SPAGUETTI.jpeg" alt="Spaguetti" class="rounded-circle food-img mb-3">
+                    <h3 class="h5 fw-bold">Bolognaise</h3>
+                    <p class="small fst-italic text-muted">Spaguettis bolognaise enrobés avec des couches de viandes exquis.</p>
+                    <button class="btn btn-commander-rouge mt-2">Commander</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="offre-card shadow-sm p-4">
+                    <div class="badge-price">3500F</div>
+                    <img src="img/pexels-valeriya-1893562.jpg" alt="valeriya" class="rounded-circle food-img mb-3">
+                    <h3 class="h5 fw-bold">Valeriya</h3>
+                    <p class="small fst-italic text-muted">Teak juteux avec du chedar affiné et des oignons caramélisé avec sauce .</p>
+                    <button class="btn btn-commander-rouge mt-2">Commander</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="offre-card shadow-sm p-4">
+                    <div class="badge-price">8000F</div>
+                    <img src="img/pexels-matthew-osier-90237472-9093553.jpg" alt="matthew-osier" class="rounded-circle food-img mb-3">
+                    <h3 class="h5 fw-bold">Osiére</h3>
+                    <p class="small fst-italic text-muted">Fillet de saumon grillé, accompagné de légumes et d'une sauce soja légère.</p>
+                    <button class="btn btn-commander-rouge mt-2">Commander</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="offre-card shadow-sm p-4">
+                    <div class="badge-price">7000F</div>
+                    <img src="img/pexels-bertellifotografia-31393445.jpg" alt="bertelli" class="rounded-circle food-img mb-3">
+                    <h3 class="h5 fw-bold">Bertelli</h3>
+                    <p class="small fst-italic text-muted">Des raméne avec des légumes aromatisés au sauce soja , servi avec du riz.</p>
+                    <button class="btn btn-commander-rouge mt-2">Commander</button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4">
+                <div class="offre-card shadow-sm p-4">
+                    <div class="badge-price">9000F</div>
+                    <img src="img/pexels-shahbaz-6113820.jpg" alt="shahbaz" class="rounded-circle food-img mb-3">
+                    <h3 class="h5 fw-bold">shahbaz</h3>
+                    <p class="small fst-italic text-muted " >Poulet grillé, accompagné de legumes croquants et sauce légere au yaourt.</p>
+                    <button class="btn btn-commander-rouge mt-2">Commander</button>
+                </div>
+            </div>
+        </div>
+    </div>
+ </section>
+                               <!-- Section Témoignages -->
+ <section id="temoignages" class="temoignages-section">
+    <div class="container text-center">
+        <h2 class="fw-bold display-5 mb-2">Témoignages de nos clients</h2>
+        <hr class="separator">
+        <p class="slogan-text">Ce que nos clients disent de nous</p>
+
+        <!-- carousel Bootstrap standard -->
+        <div id="carouselExampleIndicators" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="d-flex justify-content-center">
+                        <div class="offre-card shadow-sm p-4">
+                        <img src="img/WhatsApp Image 2026-01-09 at 21.49.15.jpeg" alt="Client 1" class="rounded-circle food-img mb-3">
+                        <h3 class="h5 fw-bold">Fatima</h3>
+                        <div class="text-warning mb-2">
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                        </div>
+                        <p class="small fst-italic text-muted">"Une expérience culinaire exceptionnelle ! Les plats sont délicieux et le service impeccable. Je recommande vivement L'assiette d'Or."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="offre-card shadow-sm p-4">
+                        <img src="img/PHOTO.jpeg" alt="Client 2" class="rounded-circle food-img mb-3">
+                        <h3 class="h5 fw-bold">Emilie</h3>
+                        <div class="text-warning mb-2">
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                        </div>
+                        <p class="small fst-italic text-muted">"L'assiette d'Or est mon restaurant préféré à Dakar. La qualité des plats est toujours au rendez-vous, et l'ambiance est chaleureuse. Un must pour les amateurs de bonne cuisine."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="d-flex justify-content-center">
+                        <div class="offre-card shadow-sm p-4">
+                        <img src="img/MUFASA.jpeg" alt="Client 3" class="rounded-circle food-img mb-3">
+                        <h3 class="h5 fw-bold">Mufasa</h3>
+                        <div class="text-warning mb-2">
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-fill"></span>
+                            <span class="bi bi-star-half"></span>
+                        </div>
+                        <p class="small fst-italic text-muted">"J'ai adoré chaque bouchée ! Les saveurs sont authentiques et les plats sont préparés avec soin. Le personnel est également très accueillant. Je reviendrai certainement."</p>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+ </section>
+
+
+
+                          <!-- Menu latéral Offcanvas -->
 
     <div class="offcanvas offcanvas-start bg-dark-custom text-white" tabindex="-1" id="menuLateral">
         <div class="offcanvas-header border-bottom border-secondary">
@@ -299,79 +474,42 @@
                 <div class="modal-body">
                     <button class="btn btn-commander mb-3" style="width: 100%;">Commander</button>
                     <div class="products-grid">
-                        <!-- Modal Boissons & Cocktails -->
-                        <div class="modal fade" id="boissonsModal" tabindex="-1">
-                            <div class="modal-dialog modal-lg">
-                                <div class="modal-content bg-dark-custom text-white">
-                                    <div class="modal-header border-secondary">
-                                        <h5 class="modal-title">🥤 Boissons & Cocktails</h5>
-                                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <button class="btn btn-commander mb-3" style="width: 100%">Commander</button>
-                                        <div class="products-grid">
-                                            <div class="product-card boisson-card">
-                                                <h6>Coca-Cola</h6>
-                                                <p class="price">1 500 FCFA</p>
-                                                <p class="description">Classique glacé</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Fanta Orange</h6>
-                                                <p class="price">1 500 FCFA</p>
-                                                <p class="description">Sucré et pétillant</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Jus mangue</h6>
-                                                <p class="price">2 500 FCFA</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Mojito</h6>
-                                                <p class="price">5 000 FCFA</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Piña Colada</h6>
-                                                <p class="price">5 500 FCFA</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Margarita</h6>
-                                                <p class="price">5 500 FCFA</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Daiquiri</h6>
-                                                <p class="price">5 200 FCFA</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Caïpirinha</h6>
-                                                <p class="price">5 500 FCFA</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Vin rouge</h6>
-                                                <p class="price">8 000 FCFA</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Vin blanc</h6>
-                                                <p class="price">8 000 FCFA</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Bière locale</h6>
-                                                <p class="price">2 000 FCFA</p>
-                                            </div>
-                                            <div class="product-card boisson-card">
-                                                <h6>Champagne</h6>
-                                                <p class="price">12 000 FCFA</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="product-card dessert-card">
+                            <h6>Tiramisu</h6>
+                            <p class="price">4 000 FCFA</p>
+                            <p class="description">Crémeux et léger</p>
                         </div>
-                            <h6>Bière locale</h6>
-                            <p class="price">2 000 FCFA</p>
+                        <div class="product-card dessert-card">
+                            <h6>Crème brûlée</h6>
+                            <p class="price">3 500 FCFA</p>
                         </div>
+                        <div class="product-card dessert-card">
+                            <h6>Mousse au chocolat</h6>
+                            <p class="price">3 000 FCFA</p>
+                        </div>
+                        <div class="product-card dessert-card">
+                            <h6>Panna cotta</h6>
+                            <p class="price">3 800 FCFA</p>
+                        </div>
+                        <!-- add more desserts here as needed -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Boissons & Cocktails -->
+    <div class="modal fade" id="boissonsModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content bg-dark-custom text-white">
+                <div class="modal-header border-secondary">
+                    <h5 class="modal-title">🥤 Boissons & Cocktails</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <button class="btn btn-commander mb-3" style="width: 100%">Commander</button>
+                    <div class="products-grid">
                         <div class="product-card boisson-card">
-                            <h6>Champagne</h6>
-                            <p class="price">12 000 FCFA</p>
-                        </div>
                             <h6>Coca-Cola</h6>
                             <p class="price">1 500 FCFA</p>
                             <p class="description">Classique glacé</p>
@@ -380,6 +518,18 @@
                             <h6>Fanta Orange</h6>
                             <p class="price">1 500 FCFA</p>
                             <p class="description">Sucré et pétillant</p>
+                        </div>
+                        <div class="product-card boisson-card">
+                            <h6>Jus mangue</h6>
+                            <p class="price">2 500 FCFA</p>
+                        </div>
+                        <div class="product-card boisson-card">
+                            <h6>Mojito</h6>
+                            <p class="price">5 000 FCFA</p>
+                        </div>
+                        <div class="product-card boisson-card">
+                            <h6>Piña Colada</h6>
+                            <p class="price">5 500 FCFA</p>
                         </div>
                         <div class="product-card boisson-card">
                             <h6>Margarita</h6>
@@ -400,15 +550,7 @@
                         <div class="product-card boisson-card">
                             <h6>Vin blanc</h6>
                             <p class="price">8 000 FCFA</p>
-                        </div>
-                        <div class="product-card boisson-card">
-                            <h6>Bière locale</h6>
-                            <p class="price">2 000 FCFA</p>
-                        </div>
-                        <div class="product-card boisson-card">
-                            <h6>Champagne</h6>
-                            <p class="price">12 000 FCFA</p>
-                        </div>
+                        </div>                      
                     </div>
                 </div>
             </div>
@@ -416,6 +558,8 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
     <script>
         // Permettre la sélection des plats
         document.addEventListener('DOMContentLoaded', function() {
