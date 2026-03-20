@@ -268,6 +268,7 @@ body {
     background: linear-gradient(135deg, #d4af7f 0%, #c9a061 100%) !important;
     color: #2c2416 !important;
     box-shadow: 0 6px 15px rgba(212, 175, 127, 0.3);
+    transform: scale(1.05);
 }
 
 /* Responsive pour petits écrans */
@@ -307,6 +308,8 @@ section {
         display: flex;
         flex-direction: column;
         justify-content: center;
+        padding-top: 50px; /* pour compenser la navbar fixe */
+        scroll-margin-top: 50px; /* pour compenser la navbar fixe lors du scroll vers les ancres */
     }
 }
 /*** Style de la ligne de séparation entre les sections */
@@ -342,7 +345,7 @@ border-top: 1px solid #d4af7f;
 }
 
 /* Le fond à carreaux  */
-.offres-section, .galerie-section, .reservation-section, .temoignages-section {
+.offres-section, .galerie-section, .reservation-section, .temoignages-section, .contact-section{
     background-color: #f8f8f8;
     background-image: radial-gradient(#d1d1d1 1px, transparent 1px);
     background-size: 30px 30px;
@@ -424,11 +427,13 @@ border-top: 1px solid #d4af7f;
     border: none;
     box-shadow: #2c2416 0px 4px 5px;
     margin-top: auto; /* Pousse le bouton vers le bas de la carte */
+    transition: 0.3s;
 }
 
 .btn-commander-rouge:hover {
     background-color: #8e2e25;
     color: white;
+    transform: scale(1.05);
 }
 
 /* pour que les carrousel se demarque sur l'image de fond */
@@ -457,10 +462,10 @@ border-top: 1px solid #d4af7f;
         width: 95%;
     }
 }
-#reservation .mb-3 {
+#reservation,.mb-3 {
     margin-bottom: 8px !important; /* Force la réduction de l'espace (remplace le mb-3 de Bootstrap) */
 }
-#reservation input{
+#reservation, input{
     padding: 6px 10px; /* Réduit encore un peu la hauteur des champs */
      font-size: 0.9rem; /* réduit la taille de la police des champs du formulaire */
 }
@@ -471,12 +476,85 @@ border-top: 1px solid #d4af7f;
     background-color: #b03a2e;
     color:white;
     border-radius: 20px;
-    padding: 10px 20px; /* Réduit la longueur du bouton (moins d'espace sur les côtés) */
+    padding: 5px 10px; /* Réduit la longueur du bouton (moins d'espace sur les côtés) */
     font-size: 0.9rem;
     border: none;
     box-shadow: #1a1512 0px 4px 5px;
+    transition: 0.3s;
 }
 .btn-reserver-rouge:hover {
     background-color: #8e2e25;
     color: white;
+    transform: scale(1.05);
+}
+
+
+                /*-----contact-section-----*/
+.contact-form-box {
+    background-color: #f5e4e4;
+    border-radius: 15px;
+    max-width: 450px;/*taille du formulaire*/
+    margin: auto;/*centre le formulaire*/
+    padding: 15px 20px; /* Réduit le padding global de la carte pour gagner de la place */
+}
+.contact-form-box .mb-3 {
+    margin-bottom: 8px !important; /* Force la réduction de l'espace (remplace le mb-3 de Bootstrap) */
+}
+.contact-form-box .form-label {
+    font-size: 0.9rem; /* réduit la taille de la police des labels du formulaire */
+    margin-bottom: 2px; /* Réduit l'espace entre le label et le champ de saisie */
+}
+.contact-form-box .form-control {
+    padding: 6px 12px; /* Réduit encore un peu la hauteur des champs */
+    font-size: 0.9rem; /* réduit la taille de la police des champs du formulaire */
+}
+
+/* Ajustement contact sur très petits écrans */
+@media (max-width: 576px) {
+    .contact-section {
+        padding: 15px;
+        width: 95%;
+    }
+}
+   
+/* ========== STYLE RAFFINÉ DU FORMULAIRE POP-UP ========== */
+
+/* Style commun pour tous les champs (Input, Select, Textarea) */
+#formCommandePopUp .form-control,
+#formCommandePopUp .form-select {
+    border: 1px solid #d4af7f; /* Bordure dorée fine et élégante */
+    border-radius: 8px; /* Arrondis doux */
+    padding: 12px 15px; /* Plus d'espace intérieur pour le confort */
+    font-family: 'Poppins', sans-serif; /* Police moderne pour la saisie */
+    font-size: 0.95rem;
+    background-color: #fffcf8; /* Fond blanc cassé très subtil */
+    color: #2c2416;
+    transition: all 0.3s ease;
+}
+
+/* Effet au clic (Focus) */
+#formCommandePopUp .form-control:focus,
+#formCommandePopUp .form-select:focus {
+    box-shadow: 0 0 10px rgba(212, 175, 127, 0.2); /* Lueur dorée douce */
+    border-color: #b03a2e; /* La bordure devient rouge thème */
+    background-color: #fff;
+}
+
+/* Style des Titres de catégories (Amuse-bouches, etc.) */
+#formCommandePopUp optgroup {
+    font-family: 'Playfair Display', serif; /* Police "Luxe" */
+    font-weight: 800; /* TRÈS GRAS comme demandé */
+    font-size: 1.1rem; /* Légèrement plus grand */
+    color: #b03a2e; /* Rouge du thème pour bien différencier */
+    background-color: #fceceb; /* Fond rouge très pâle pour marquer la section */
+    letter-spacing: 0.5px; /* Espacement léger des lettres pour l'élégance */
+    font-style: italic;
+}
+
+/* Style des options (les plats) pour qu'ils soient bien distincts */
+#formCommandePopUp option {
+    font-family: 'Poppins', sans-serif;
+    color: #2c2416;
+    background-color: #ffffff;
+    font-weight: 400;
 }
