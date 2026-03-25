@@ -517,7 +517,7 @@ border-top: 1px solid #d4af7f;
     }
 }
    
-/* ========== STYLE RAFFINÉ DU FORMULAIRE POP-UP ========== */
+/* ========== STYLE DU FORMULAIRE POP-UP ========== */
 
 /* Style commun pour tous les champs (Input, Select, Textarea) */
 #formCommandePopUp .form-control,
@@ -542,8 +542,8 @@ border-top: 1px solid #d4af7f;
 
 /* Style des Titres de catégories (Amuse-bouches, etc.) */
 #formCommandePopUp optgroup {
-    font-family: 'Playfair Display', serif; /* Police "Luxe" */
-    font-weight: 800; /* TRÈS GRAS comme demandé */
+    font-family: 'Playfair Display', serif; /* Police  */
+    font-weight: 800; /* TRÈS GRAS  */
     font-size: 1.1rem; /* Légèrement plus grand */
     color: #b03a2e; /* Rouge du thème pour bien différencier */
     background-color: #fceceb; /* Fond rouge très pâle pour marquer la section */
