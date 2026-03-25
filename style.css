@@ -2,7 +2,7 @@ html{
     scroll-behavior: smooth;
 }
 body {
-    scroll-padding-top: 80px; /* Ajustez cette valeur en fonction de la hauteur de votre navbar */
+    scroll-padding-top: 80px; /* Ajustez cette valeur en fonction de la hauteur mon navbar */
 }
 
 /* Evite que les sections soient masquées par la navbar fixe lors de l'ancre */
@@ -40,12 +40,6 @@ body {
     align-items: center;
     justify-content: center;
     padding-top: 80px; /* Pour ne pas être caché par la navbar fixe */
-}
-
-/* Titres et Textes */
-.main-title {
-    font-family: 'Playfair Display', serif;
-    letter-spacing: 2px;
 }
 
 .slogan-box {
@@ -90,16 +84,6 @@ body {
     color: #f3ef7d;
     padding-left: 10px;
   }  
-.hero-icon {
-    width: 60px;  
-    height: auto; 
-    margin-bottom: 10px;
-}
-.main-title{
-     font-family: 'Playfair Display', serif;
-     line-height: 1;
-}
-
 /* ======== STYLES POUR LES MODALES ET CARTES DE PRODUITS ======== */
 
 /* Grille de produits responsive */
@@ -232,7 +216,7 @@ body {
 .modal-content {
     border: 1px solid #d4af7f;
     border-radius: 8px;
-    background-color: #f9f7f4 !important;
+    background-color: #f9f7f4 ;
 }
 
 .modal-header {
@@ -250,8 +234,8 @@ body {
 
 /* Bouton Commander  */
 .btn-commander {
-    background: linear-gradient(135deg, #2c2416 0%, #3d3530 100%) !important;
-    color: #d4af7f !important;
+    background: linear-gradient(135deg, #2c2416 0%, #3d3530 100%) ;
+    color: #d4af7f ;
     font-weight: 600;
     border: 2px solid #d4af7f;
     border-radius: 5px;
@@ -271,7 +255,7 @@ body {
     transform: scale(1.05);
 }
 
-                   /* Responsive pour petits écrans */
+                   /* Responsive pour petits écrans  et affichage des section*/
 @media (max-width: 768px) {
     .products-grid {
         /* 130px pour 2 colonnes sur les petits écrans,  */
@@ -298,6 +282,50 @@ body {
 section {
     padding : 60px 0; /* espace réduit pour mobile */
     width: 100%;
+}
+
+/* Titres et Texte */
+.main-title {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+}
+@media (max-width: 576px) {
+    .main-title {
+        font-size: 2.1rem ; 
+    }
+    .chef-icon {
+        width: 45px ; /* Réduit l'icône du chef */
+    }
+    .slogan-box {
+        padding: 5px 20px ; /* Réduit l'encadré du slogan */
+    }
+    .slogan-text {
+        font-size: 1.1rem ; /* Réduit le texte du slogan */
+    }
+    .sub-title {
+        font-size: 1rem ; /* Réduit le sous-titre */
+        margin-bottom: 30px ; /* Réduit l'espace avant le bouton */
+    }
+    .btn-yellow-custom {
+        font-size: 1.1rem ; /* Bouton plus adapté au mobile */
+        padding: 10px 30px ; /* Moins massif */
+    }
+
+    /* Réduction et alignement horizontal du footer sur mobile */
+    footer {
+        padding: 30px 0 ;
+    }
+    footer img {
+        max-width: 90px ;
+    }
+    footer h5 { font-size: 1rem ; }
+    footer h6 { 
+        font-size: 0.85rem ;
+        margin-bottom: 15px ;
+    }
+    footer .small, footer li, footer a, footer span {
+        font-size: 0.75rem ;
+    }
 }
 
 /*ajustement spécifique pour la section desktop (ordinateur)*/
@@ -352,12 +380,11 @@ border-top: 1px solid #d4af7f;
     border-bottom: 2px solid #814e0a;
 }
 .galerie-section, .offres-section {
-    padding-top: 50px; /* Réduit l'espace au-dessus de la section galerie */
-
+    padding-top: inherit; /* le même padding que les autres sections */
 }
 .galerie-section h2 {
-    margin-bottom: 0; /* Réduit l'espace entre le titre et la ligne de séparation */
-    margin-bottom: 10px; /* Ajoute un peu d'espace entre le titre et la ligne de séparation */
+    margin-bottom: 10px;
+ /* Ajoute un peu d'espace entre le titre et la ligne de séparation */
 }
 
 /* Style des cartes roses */
@@ -366,19 +393,17 @@ border-top: 1px solid #d4af7f;
     border-radius: 20px;
     position: relative;
     border: none;
+    padding: 20px; /* Padding unique pour toutes les cartes */
     height: 100%; /* Permet aux cartes d'une même ligne d'avoir la même hauteur */
     display: flex;       /* Permet d'aligner le bouton en bas */
     flex-direction: column;
     align-items: center; /* Centre l'image et empêche le bouton de s'étirer (réduit sa longueur) */
+    text-align: center;
 }
 
 /* --- Optimisation pour afficher les 6 images de la GALERIE ensemble (Compact) --- */
 .galerie-section .row {
     --bs-gutter-y: 10px; /* Réduit l'espace entre les lignes */
-}
-
-.galerie-section .offre-card {
-    padding: 10px !important; /* Réduit le padding interne (écrase le p-4 bootstrap) */
 }
 
 .galerie-section .food-img {
@@ -459,13 +484,13 @@ border-top: 1px solid #d4af7f;
 @media (max-width: 576px) {
     .reservation-card {
         padding: 15px;
-        width: 95%;
+        max-width: 95%;
     }
 }
-#reservation,.mb-3 {
-    margin-bottom: 8px !important; /* Force la réduction de l'espace (remplace le mb-3 de Bootstrap) */
+#reservation .mb-3 {
+    margin-bottom: 8px !important; 
 }
-#reservation, input{
+#reservation input, #reservation select {
     padding: 6px 10px; /* Réduit encore un peu la hauteur des champs */
      font-size: 0.9rem; /* réduit la taille de la police des champs du formulaire */
 }
@@ -511,9 +536,8 @@ border-top: 1px solid #d4af7f;
 
 /* Ajustement contact sur très petits écrans */
 @media (max-width: 576px) {
-    .contact-section {
-        padding: 15px;
-        width: 95%;
+    .contact-form-box {
+        max-width: 95%;
     }
 }
    
