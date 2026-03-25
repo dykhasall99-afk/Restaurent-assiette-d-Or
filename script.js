@@ -23,7 +23,7 @@ if (reservationForm) {
      
 
 
-    //====== formulaire pour la commande en popup
+    //======alert succés formulaire pour la commande en popup
 document.addEventListener('DOMContentLoaded', function() {
     const formCommande = document.getElementById('formCommandePopUp');
 
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
- //====== formulaire pour la commande en popup
+ //====== alert succés pour le formulaire contact
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
 
